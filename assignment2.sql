@@ -17,9 +17,7 @@ create table students (
 create table instructors (
 	instructor_id int auto_increment primary key,
     fullName varchar(50) not null ,
-    age int not null,
-    constraint chkage_invalid check(age >= 18),
-    gender varchar(15),
+    specialty varchar(50) not null,
     email varchar(50) unique not null,
     city varchar(50) default "Riyadh"
 );
@@ -65,11 +63,11 @@ create table enrollments (
     ("Lama Alghamdi","female",24,"Lama741@gmail.com","2026-07-09 10:15:00"),
     ("Faisal Alqahtani","male",26,"Faisal852@gmail.com","2026-07-09 11:45:00");
 
-insert into instructors (fullName,age,gender,email,city) values
-	("Abdullah Alsehani",36,"male","Abdullahinst@gmail.com","jeddah"),
-    ("Amal Alkhaldi",32,"female","Amalinst@gmail.com","dammam"),
-    ("Amani Alzhrani",38,"female","Amaniinst@gmail.com","Abha"),
-    ("Sarah Alamri",29,"male","Sarahinst@gmail.com","Taif");
+insert into instructors (fullName,email,city,specialty) values
+	("Abdullah Alsehani","Abdullahinst@gmail.com","jeddah",'Databases'),
+    ("Amal Alkhaldi","Amalinst@gmail.com","dammam",'Web Development'),
+    ("Amani Alzhrani","Amaniinst@gmail.com","Abha", 'Data Science'),
+    ("Sarah Alamri","Sarahinst@gmail.com","Taif",'Networking');
 
 insert into courses (course_name, category, price, duration_hours, start_date, instructor_id) VALUES
 ('SQL Fundamentals', 'Databases', 799.00, 30, '2026-02-01', 1),
